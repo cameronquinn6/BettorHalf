@@ -14,6 +14,7 @@ body {
 }
 
 h1 {
+  font-size: 76px;
   font-style: block;
   text-align: center;
 
@@ -37,6 +38,7 @@ h1 {
 }
 
 h2 {
+  font-size: 20px;
   text-align: center;
 }
 
@@ -48,16 +50,29 @@ h3 {
   margin: 10px;
 }
 
+#header-wrapper {
+  margin-top: 10px;
+}
+
 #list-fund {
   text-align: left;
 }
 
-.slogan {
-
-  border: 3px $slogan-color solid;
-  box-sizing: border-box center;
-  color: $slogan-color;
+div[id$=wrapper] {
+  // outline: 3px solid red;
+  margin: 25px 0;
+  padding: 25px;
+  position: relative;
   text-align: center;
-  width: 500px;
+}
+
+.slogan {
+  // border: 3px $slogan-color solid;
   border-radius: 10px;
+  box-sizing: border-box;
+  color: $slogan-color;
+  margin: 0 auto;
+  text-align: center;
+  width: 450px;
+
 }
