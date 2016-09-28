@@ -1,20 +1,166 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Example</title>
+   <head>
+     <title>BETTOR HALF</title>
+     <script src="vendor.bundle.js" type="text/javascript" charset="utf-8" defer></script>
+     <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
+   </head>
+   <body>
+     <!-- NAV BAR -->
+     <nav class="navbar">
+       <button type="button" id="sign-in-nav" data-target="#signInModal" data-toggle="modal" class="btn btn-default navbar-btn navbar-right">Sign in</button>
+       <button type="button" id="sign-up-nav" data-target="#signUpModal" data-toggle="modal" class="btn btn-default navbar-btn navbar-right">Create Account</button>
+       <button type="button" id="sign-out-nav" data-target="#signOutModal" data-toggle="modal" class="btn btn-default navbar-btn navbar-right">Sign out</button>
+       <button type="button" id="change-password-nav" data-target="#changePasswordModal" data-toggle="modal" class="btn btn-default navbar-btn navbar-right">Change password</button>
+       <!-- <button type="button" id="new-game-nav" data-target="#signInModal" data-toggle="modal" class="btn btn-default navbar-btn navbar-right newgamebutton">New Game</button> -->
+       <button type="button" id="list-fund" data-target="#listFundModal" data-toggle="modal" class="btn btn-default navbar-btn navbar-right">List Your Fund</button>
+      </nav>
 
-      <script src="vendor.bundle.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body class="container-fluid">
-      <h1>Example</h1>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-      ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.</p>
-    </body>
+     <h1>BETTORHALF</h1>
+      <h2 class="slogan">The Bettor Way To Invest</h2>
+     <div class="fund-board">
+
+     </div>
+     <!-- <table class="table">
+       <thead>
+         <tr>
+           <th>#</th>
+           <th>First Name</th>
+           <th>Last Name</th>
+           <th>Username</th>
+         </tr>
+       </thead>
+       <tbody>
+         <tr>
+           <th scope="row">1</th>
+           <td>Mark</td>
+           <td>Otto</td>
+           <td>@mdo</td>
+         </tr>
+         <tr>
+           <th scope="row">2</th>
+           <td>Jacob</td>
+           <td>Thornton</td>
+           <td>@fat</td>
+         </tr>
+         <tr>
+           <th scope="row">3</th>
+           <td>Larry</td>
+           <td>the Bird</td>
+           <td>@twitter</td>
+         </tr>
+       </tbody>
+     </table> -->
+
+
+<div class="over-lay"></div>
+
+<!--  Sign in modal-->
+     <div class="modal fade" id="signInModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+       <div class="modal-dialog" role="document">
+         <div class="modal-content">
+           <div class="modal-header">
+             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+             <h4 class="modal-title" id="myModalLabel">Sign in!</h4>
+           </div>
+           <div class="modal-body">
+             <form id='sign-in'>
+               <input name="credentials[email]" type="text" placeholder="email address">
+               <input name="credentials[password]" type="password" placeholder="password">
+               <input class="btn btn-primary" type="submit" name="submit" value="Sign In">
+             </form>
+           </div>
+           <div class="modal-footer">
+             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+         </div>
+       </div>
+     </div>
+<!--  Sign up modal-->
+     <div class="modal fade" id="signUpModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+       <div class="modal-dialog" role="document">
+         <div class="modal-content">
+           <div class="modal-header">
+             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+             <h4 class="modal-title" id="myModalLabel">Create Account</h4>
+           </div>
+           <div class="modal-body">
+             <form id='sign-up'>
+               <input name="credentials[email]" type="text" placeholder="email address">
+               <input name="credentials[password]" type="password" placeholder="password">
+                <input name="credentials[password_confirmation]" type="password" placeholder="confirm password">
+                <input class="btn btn-primary" type="submit" name="submit" value="ubmit">
+             </form>
+           </div>
+           <div class="modal-footer">
+             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+         </div>
+       </div>
+     </div>
+     <!-- change password-->
+     <div class="modal fade" id="changePasswordModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+       <div class="modal-dialog" role="document">
+         <div class="modal-content">
+           <div class="modal-header">
+             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+             <h4 class="modal-title" id="myModalLabel">Change Password</h4>
+           </div>
+           <div class="modal-body">
+             <form id='change-password'>
+               <input name="passwords[old]" type="password" placeholder="Old Password">
+               <input name="passwords[new]" type="password" placeholder="New Password">
+               <input class="btn btn-primary" type="submit" name="submit" value="Change Password">
+             </form>
+           </div>
+           <div class="modal-footer">
+             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+         </div>
+       </div>
+     </div>
+     <!-- Sign Out Modal -->
+     <div class="modal fade" id="signOutModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+       <div class="modal-dialog" role="document">
+         <div class="modal-content">
+           <div class="modal-header">
+             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+             <h4 class="modal-title" id="myModalLabel">Sign Out</h4>
+           </div>
+           <div class="modal-body">
+             <form id='sign-out'>
+               <input class="btn btn-default" type="submit" name="submit" value="Sign Out">
+             </form>
+           </div>
+           <div class="modal-footer">
+            </div>
+         </div>
+       </div>
+     </div>
+     <!-- List fund -->
+     <div class="modal fade" id="listFundModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+       <div class="modal-dialog" role="document">
+         <div class="modal-content">
+           <div class="modal-header">
+             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+             <h4 class="modal-title" id="myModalLabel">List Fund</h4>
+           </div>
+           <div class="modal-body">
+             <form id='list-fund'>
+               <input name="passwords[old]" type="password" placeholder="Old Password">
+               <input name="passwords[new]" type="password" placeholder="New Password">
+               <input class="btn btn-primary" type="submit" name="submit" value="Change Password">
+             </form>
+           </div>
+           <div class="modal-footer">
+             <button type="button" class="btn btn-default" data-dismiss="modal">Create Fund</button>
+            </div>
+         </div>
+       </div>
+     </div>
+
+
+
+   </body>
 </html>
